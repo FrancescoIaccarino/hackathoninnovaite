@@ -38,7 +38,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Contact Us</h4>
             <div className="space-y-2">
               <a 
-                href="mailto:info@innovaite.com"
+                href="mailto:aihub.bocconistudents@gmail.com"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
