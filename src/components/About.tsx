@@ -52,7 +52,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            InnovAIte is a 30-hour AI hackathon organized by Bocconi AI HuB, uniting brilliant minds 
+            InnovAIte is a 30-hour AI hackathon organized by Bocconi Associations, uniting brilliant minds 
             to solve real-world AI challenges. 
             Experience a collaborative environment where innovation meets expertise, 
             with mentorship from industry leaders and the opportunity to work on cutting-edge AI solutions.

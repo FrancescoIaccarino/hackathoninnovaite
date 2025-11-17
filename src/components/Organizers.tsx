@@ -107,7 +107,7 @@ const Organizers = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          {/* <div className="mt-16 text-center">
             <div className="inline-block p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/30 backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-3">
                 Powered by <span className="text-primary">Bocconi AI HuB</span>
@@ -117,7 +117,7 @@ const Organizers = () => {
                 to advance artificial intelligence through education, innovation, and collaboration
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ interface ApplicationData {
   phone: string;
   degreeProgram: string;
   yearOfStudy: string;
+  affiliation?: string;
   linkedIn: string;
   github?: string;
   hasTeam: boolean;
@@ -51,12 +52,14 @@ export const handler: Handler = async (event: HandlerEvent) => {
         <li><strong>Phone:</strong> ${data.phone}</li>
         <li><strong>Degree Program:</strong> ${data.degreeProgram}</li>
         <li><strong>Year of Study:</strong> ${data.yearOfStudy}</li>
+        ${data.affiliation ? `<li><strong>Affiliation:</strong> ${data.affiliation}</li>` : ''}
       </ul>
 
       <h3>Profile</h3>
       <ul>
         <li><strong>LinkedIn:</strong> <a href="${data.linkedIn}">${data.linkedIn}</a></li>
         ${data.github ? `<li><strong>GitHub:</strong> <a href="${data.github}">${data.github}</a></li>` : ''}
+        ${data.cvFileName ? `<li><strong>CV:</strong> ${data.cvFileName} (attached)</li>` : ''}
       </ul>
 
       <h3>Team Participation</h3>
@@ -84,6 +87,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
       "Phone",
       "Degree Program",
       "Year of Study",
+      "Affiliation",
       "LinkedIn",
       "GitHub",
       "Has Team",
@@ -102,6 +106,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
       data.phone,
       data.degreeProgram,
       data.yearOfStudy,
+      data.affiliation || "",
       data.linkedIn,
       data.github || "",
       data.hasTeam ? "Yes" : "No",
@@ -168,6 +173,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
           <li><strong>Phone:</strong> ${data.phone}</li>
           <li><strong>Degree Program:</strong> ${data.degreeProgram}</li>
           <li><strong>Year of Study:</strong> ${data.yearOfStudy}</li>
+          ${data.affiliation ? `<li><strong>Affiliation:</strong> ${data.affiliation}</li>` : ''}
           <li><strong>LinkedIn:</strong> <a href="${data.linkedIn}">${data.linkedIn}</a></li>
           ${data.github ? `<li><strong>GitHub:</strong> <a href="${data.github}">${data.github}</a></li>` : ''}
           <li><strong>Team Participation:</strong> ${data.hasTeam ? 'Has a team' : (data.wantTeamAssignment ? 'Wants team assignment' : 'Individual applicant')}</li>

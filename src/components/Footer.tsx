@@ -81,7 +81,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} InnovAIte by AI HuB. All rights reserved.</p>
+          <p>© {currentYear} InnovAIte. All rights reserved.</p>
           <p className="mt-2">
             Organized by student associations from Bocconi University
           </p>

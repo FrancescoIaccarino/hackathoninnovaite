@@ -19,6 +19,8 @@ const Registration = () => {
     phone: "",
     degreeProgram: "",
     yearOfStudy: "",
+    affiliation: "",
+    affiliationOther: "",
     cv: null as File | null,
     linkedIn: "",
     github: "",
@@ -48,6 +50,26 @@ const Registration = () => {
       toast({
         title: "Error",
         description: "Please select your year of study.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate affiliation
+    if (!formData.affiliation) {
+      toast({
+        title: "Error",
+        description: "Please select your affiliation.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate affiliation other field
+    if (formData.affiliation === "other" && !formData.affiliationOther.trim()) {
+      toast({
+        title: "Error",
+        description: "Please specify your affiliation.",
         variant: "destructive",
       });
       return;
@@ -106,6 +128,7 @@ const Registration = () => {
           phone: formData.phone,
           degreeProgram: formData.degreeProgram,
           yearOfStudy: formData.yearOfStudy,
+          affiliation: formData.affiliation === "other" ? formData.affiliationOther : formData.affiliation,
           linkedIn: formData.linkedIn,
           github: formData.github,
           hasTeam: formData.hasTeam,
@@ -134,6 +157,8 @@ const Registration = () => {
           phone: "",
           degreeProgram: "",
           yearOfStudy: "",
+          affiliation: "",
+          affiliationOther: "",
           cv: null,
           linkedIn: "",
           github: "",
@@ -331,6 +356,45 @@ const Registration = () => {
                   </Select>
                 </div>
               </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="affiliation" className="text-base">Affiliation *</Label>
+                <Select 
+                  value={formData.affiliation}
+                  onValueChange={(value) => setFormData({...formData, affiliation: value})}
+                >
+                  <SelectTrigger className="bg-background/50 border-border/50 focus:border-primary">
+                    <SelectValue placeholder="Select your affiliation" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="astra-bocconi">Astra Bocconi</SelectItem>
+                    <SelectItem value="bsml">BSML</SelectItem>
+                    <SelectItem value="bsdsa">BSDSA</SelectItem>
+                    <SelectItem value="bainsa">BAINSA</SelectItem>
+                    <SelectItem value="voyce">Voyce</SelectItem>
+                    <SelectItem value="thehacklab">The HackLab</SelectItem>
+                    <SelectItem value="hephaestus">Hephaestus</SelectItem>
+                    <SelectItem value="law4ai">Law4AI</SelectItem>
+                    <SelectItem value="other">Other (please specify below)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {formData.affiliation === "other" && (
+                <div className="space-y-2 animate-fade-in">
+                  <Label htmlFor="affiliationOther" className="text-base">Please specify your affiliation *</Label>
+                  <Input 
+                    id="affiliationOther"
+                    name="Affiliation Other"
+                    type="text"
+                    placeholder="Enter your affiliation"
+                    value={formData.affiliationOther}
+                    onChange={(e) => setFormData({...formData, affiliationOther: e.target.value})}
+                    required={formData.affiliation === "other"}
+                    className="bg-background/50 border-border/50 focus:border-primary transition-colors"
+                  />
+                </div>
+              )}
             </div>
 
             {/* 2. Experience and Profile */}
@@ -349,7 +413,7 @@ const Registration = () => {
                     accept=".pdf"
                     onChange={handleFileChange}
                     required
-                    className="h-10 py-2.5 bg-background/50 border-border/50 focus:border-primary transition-colors file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer"
+                    className="h-15 py-2.5 bg-background/50 border-border/50 focus:border-primary transition-colors file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer"
                   />
                   {formData.cv && (
                     <p className="text-xs text-muted-foreground mt-2 flex items-center gap-2">
