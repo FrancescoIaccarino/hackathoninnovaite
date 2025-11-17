@@ -183,7 +183,7 @@ export const handler: Handler = async (event: HandlerEvent) => {
         <h3>What happens next?</h3>
         <p>We will review all applications carefully and get in touch with you regarding the outcome. The selection process may take a few days, so please be patient.</p>
         
-        <p>If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:info@innovaite.com">info@innovaite.com</a>.</p>
+        <p>If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:aihub.bocconistudents@gmail.com">aihub.bocconistudents@gmail.com</a>.</p>
         
         <p>Best regards,<br>
         The InnovAIte Team<br></p>

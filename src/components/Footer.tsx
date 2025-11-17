@@ -35,16 +35,16 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-4">
-            {/* <h4 className="text-lg font-semibold">Contact Us</h4>
+            <h4 className="text-lg font-semibold">Contact Us</h4>
             <div className="space-y-2">
               <a 
                 href="mailto:info@innovaite.com"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>info@innovaite.com</span>
+                <span>aihub.bocconistudents@gmail.com</span>
               </a>
-            </div> */}
+            </div>
           </div>
 
           {/* Social Media */}
