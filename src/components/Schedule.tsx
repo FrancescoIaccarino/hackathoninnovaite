@@ -6,18 +6,29 @@ const Schedule = () => {
       day: "Day 1",
       date: "Saturday",
       events: [
-        { time: "10:00 AM", endTime: "11:00 AM", title: "Opening Ceremony", description: "Teams registration and welcome from organizers" },
-        { time: "11:00 AM", endTime: "12:00 PM", title: "Keynote Panels", description: "Industry experts share insights on AI trends" },
-        { time: "12:00 PM", title: "Challenge Reveal and Hackathon Begins!", description: "Competition challenges are revealed and the hackathon officially starts" },
+        { time: "9:30 AM", endTime: "10:00 AM", title: "Registration & Welcome", description: "Teams check-in and welcome coffee" },
+        { time: "10:00 AM", endTime: "10:15 AM", title: "Institutional Greetings", description: "Student Representative: Armando Mastromartino, CDS President." },
+        { time: "10:15 AM", endTime: "11:30 AM", title: "Panel: \"Humans vs Algorithms\"", description: "Industry experts from DataPizza, E-Group and Starting Finance share their insights" },
+        { time: "11:30 AM", endTime: "11:50 AM", title: "Technical Briefing & Rules", description: "Explanation of the challenges and pitch by our Tech Partners" },
+        { time: "11:50 AM", endTime: "12:00 PM", title: "Teams Placement" },
+        { time: "12:00 PM", title: "HACKATHON BEGINS!🚀" },
+        { time: "1:00 PM", endTime: "2:00 PM", title: "Lunch" },
+        { time: "2:00 PM", endTime: "8:00 PM", title: "Working Phase & Mentoring", description: "Teams work on their projects with mentoring support" },
+        { time: "8:00 PM", endTime: "9:00 PM", title: "Dinner" },
+        { time: "9:00 PM", endTime: "Late Night", title: "Night Mode", description: "Coding and chilling" },
       ]
     },
     {
       day: "Day 2",
       date: "Sunday",
       events: [
-        { time: "12:00 PM", title: "Project Submissions", description: "It's time to submit your projects" },
-        { time: "12:00 PM", endTime: "02:00 PM", title: "Final Presentations", description: "Pitch your projects to judges" },
-        { time: "02:00 PM", endTime: "03:00 PM", title: "Awards Ceremony", description: "Winners announced and prizes awarded" },
+        { time: "9:00 AM", endTime: "10:30 AM", title: "\"Power\" Breakfast & Final Rush" },
+        { time: "10:30 AM", title: "End of Entrepreneurship track", description: "Final submissions for presentations and other material for Entrepreneurship track teams" },
+        { time: "10:45 AM", endTime: "11:45 AM", title: "Pitch Session (Entrepreneurship)", description: "Entrepreneurship track teams present their projects to the jury" },
+        { time: "12:00 PM", title: "End of Machine Learning Track", description: "Final submissions for results and code for Machine Learning track teams" },
+        { time: "12:00 PM", endTime: "12:30 PM", title: "Jury Validates the leaderboard (ML)", description: "Machine Learning track jury reviews and validates the code and the leaderboard" },
+        { time: "12:30 PM", endTime: "1:15 PM", title: "Awards Ceremony & Final Remarks", description: "Winners from both tracks are announced, they pitch their projects and receive their prizes" },
+        { time: "1:15 PM", title: "End of Event" },
       ]
     }
   ];
@@ -63,14 +74,14 @@ const Schedule = () => {
                   >
                     <div className="flex items-center gap-2 text-primary font-semibold min-w-[100px]">
                       <Clock className="w-4 h-4" />
-                      <div className="text-sm">
+                      <div className="text-sm text-center">
                         <div>{event.time}</div>
                         {event.endTime && <div>{event.endTime}</div>}
                       </div>
                     </div>
-                    <div className="flex-1">
+                    <div className={`flex-1 ${!event.description ? 'flex items-center' : ''}`}>
                       <h4 className="font-semibold mb-1">{event.title}</h4>
-                      <p className="text-sm text-muted-foreground">{event.description}</p>
+                      {event.description && <p className="text-sm text-muted-foreground">{event.description}</p>}
                     </div>
                   </div>
                 ))}
