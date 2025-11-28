@@ -7,7 +7,7 @@ const Sponsors = () => {
       tier: "Sponsors",
       icon: Crown,
       color: "text-primary",
-      sponsors: ["astra-bocconi", "egroup", "hotiday", "cvc", "lovable"],
+      sponsors: ["astra-bocconi", "egroup", "hotiday", "cvc", "lovable", "venti-136"],
       description: "Premier partners driving AI innovation"
     },
     {
